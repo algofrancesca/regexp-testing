@@ -101,7 +101,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"(ciabatta tecnica)|(ciabatta gomma)|(ciaba
 	"shoes and accessories_uncategorized_uncategorized_uncategorized"
 
     // TOYS / DECORATION
-ELSEIF REGEXP_MATCH([Product Concat],"(25o anniversario della repubblica slovacca)|^clementoni|(party bag)|(ita pokemon pack fresh)")  THEN 
+ELSEIF REGEXP_MATCH([Product Concat],"(25o anniversario della repubblica slovacca)|^clementoni|(ita pokemon pack fresh)")  THEN 
 	"toys and games_uncategorized_uncategorized_uncategorized"
 
     // APPS
@@ -113,7 +113,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"(25o anniversario della repubblica slovacc
 	"health and personal care_sex and sensuality_uncategorized_uncategorized"
 
     // HAIR CARE
-    ELSEIF REGEXP_MATCH([Product Concat],"(treccia bionda)")  THEN 
+    ELSEIF REGEXP_MATCH([Product Concat],"treccia bionda")  THEN 
     "beauty_hair care_wigs and accessories_uncategorized"
 
     // MEDICAL REMEDIES
@@ -133,35 +133,35 @@ ELSEIF REGEXP_MATCH([Product Concat],"(25o anniversario della repubblica slovacc
     "home and kitchen_arts and crafts_leathercraft_uncategorized"
 
     // SPORT SUPPLIES
-    ELSEIF REGEXP_MATCH([Product Concat],"Fog Light Assemblies") AND ["Merchant Name"]="ebay" THEN 
+    ELSEIF REGEXP_MATCH([Product Concat],"Fog Light Assemblies") AND [Merchant Name]="ebay" THEN 
     "sports and outdoors_cycling_components and parts_uncategorized"
 
     // ELECTRICAL SUPPLIES
-    ELSEIF REGEXP_MATCH([Product Concat],"legrand plexo cross") AND ["Merchant Name"]="ebay"  THEN 
+    ELSEIF REGEXP_MATCH([Product Concat],"legrand plexo cross") AND [Merchant Name]="ebay"  THEN 
     "diy and tools_electrical_ac power plugs and sockets_uncategorized"
     
     // COMPUTER EQUIPMENT
-    ELSEIF REGEXP_MATCH([Product Concat],"(Mastercase.*(Mesh Cooler Master))|(protector de pantalla)") AND ["Merchant Name"]="ebay" THEN 
+    ELSEIF REGEXP_MATCH([Product Concat],"(Mastercase.*(Mesh Cooler Master))|(protector de pantalla)") AND [Merchant Name]="ebay" THEN 
     "computer and electronics_components and replacement parts_computer cases_uncategorized"
 
     // COMPUTER EQUIPMENT
-    ELSEIF REGEXP_MATCH([Product Concat],"ladegerat olivetti olipad") AND ["Merchant Name"]="ebay"  THEN 
+    ELSEIF REGEXP_MATCH([Product Concat],"ladegerat olivetti olipad") AND [Merchant Name]="ebay"  THEN 
     "computer and electronics_accessories_computer accessories_uncategorized"
 
     // HOME
-    ELSEIF REGEXP_MATCH([Product Concat],"cosenza-panorama-1922") AND ["Merchant Name"]="ebay"  THEN 
+    ELSEIF REGEXP_MATCH([Product Concat],"cosenza-panorama-1922") AND [Merchant Name]="ebay"  THEN 
     "home and kitchen_home accessories_photo frames_uncategorized"
 
     // HOME
-    ELSEIF REGEXP_MATCH([Product Concat],"art.*(insieme in campagna)") AND ["Merchant Name"]="ebay"  THEN 
+    ELSEIF REGEXP_MATCH([Product Concat],"art.*(insieme in campagna)") AND [Merchant Name]="ebay"  THEN 
     "home and kitchen_arts and crafts_ceramics and pottery_uncategorized"
 
     // DOG FOOD
-    ELSEIF REGEXP_MATCH([Product Concat],"(eukanuba puppy).*crocchette") AND ["Merchant Name"]="ebay"  THEN 
+    ELSEIF REGEXP_MATCH([Product Concat],"(eukanuba puppy).*crocchette") AND [Merchant Name]="ebay"  THEN 
     "pet supplies_dogs_food_dry"
 
     // HAIRCARE
-    ELSEIF REGEXP_MATCH([Product Concat],"kerastase bain cristalliste") AND ["Merchant Name"]="ebay"  THEN 
+    ELSEIF REGEXP_MATCH([Product Concat],"kerastase bain cristalliste") AND [Merchant Name]="ebay"  THEN 
     "beauty_hair care_shampoos, conditioners and styling products_liquid shampoos"
 
 
@@ -178,7 +178,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"preparato.*pane.*proteico|cameo.*torta|tor
     // BEER
 ELSEIF REGEXP_MATCH([Product Concat],"tuka") THEN
     "grocery_beer, wine and spirits_beer and cider_beers"
-ELSEIF REGEXP_MATCH([Product Concat],"(roma ipa)|(la pils)|(la belga)") AND ["Merchant Name"]="winelivery" THEN
+ELSEIF REGEXP_MATCH([Product Concat],"(roma ipa)|(la pils)|(la belga)") AND [Merchant Name]="winelivery" THEN
     "grocery_beer, wine and spirits_beer and cider_beers"
 
     // GIN/GIN STYLE
@@ -200,13 +200,13 @@ ELSEIF REGEXP_MATCH([Product Concat],"asiago.*fresco") THEN
     // CHEESE NATURAL - FRESH
 ELSEIF REGEXP_MATCH([Product Concat],"treccia.*(f.*latte|latte.*pugliese)|caseificio pugliese|treccia 180 g|sanguedolce|formaggio.*capra|toma maccagno|pepato.*siciliano") THEN
     "grocery_dairy_cheese_natural cheeses - fresh"
-ELSEIF REGEXP_MATCH([Product Concat],"(treccione affum)|(tomini per griglia)") AND [ML Category 0]="grocery" THEN
+ELSEIF REGEXP_MATCH([Product Concat],"(treccione affum)|(tomini per griglia)") AND [Ml Category 0]="grocery" THEN
     "grocery_dairy_cheese_natural cheeses - fresh"
 
     // ICE CREAM/NOVELTIES/SORBET/YOGURT - FROZEN
 ELSEIF REGEXP_MATCH([Product Concat],"conos.*helado|bombon.*(helado|vainilla)|gel.*lattebusche|dia temptation|gelato.*coop|cornetto.*(helado|algida|caramello|classico|limited|nocciola)|ben.*jerry") THEN
     "grocery_dairy_yogurts and desserts_ice cream, sorbets and yoghurts - frozen"
-ELSEIF REGEXP_MATCH([Product Concat],"cornett.*algida") AND [ML Category 0]="grocery" THEN
+ELSEIF REGEXP_MATCH([Product Concat],"cornett.*algida") AND [Ml Category 0]="grocery" THEN
     "grocery_dairy_yogurts and desserts_ice cream, sorbets and yoghurts - frozen"
 
     // YOGURT/YOGURT SUBSTITUTE - SPOONABLE - FRESH
