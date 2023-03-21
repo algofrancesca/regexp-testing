@@ -218,7 +218,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"fraise.*barquette|nectarina.*\d\d\d.*g|cuo
     "grocery_fruit and vegetables_fruits_fruits - fresh"
 
     // FRUIT DRIED
-ELSEIF REGEXP_MATCH([Product Concat],"(datteri medjoul)|(datteri medjool)") THEN
+ELSEIF REGEXP_MATCH([Product Concat],"(datteri medjoul)|(datteri medjool)|((prugne|albicocche|banana|fichi|bacche|zenzero).*(secch|essiccat|denocciolat|disidrat))") THEN
     "grocery_sweet groceries_dried fruits_dried fruits - ambient"
 
     // VEGETABLES - OTHER - AMBIENT
@@ -407,7 +407,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"110702 anelli cipolla") THEN
     "grocery_prepared food_other - frozen_uncategorized"
 
     // BREAKFAST CEREALS
-ELSEIF REGEXP_MATCH([Product Concat],"(nesquik cereali).*(nesquik.*cereali)") THEN
+ELSEIF REGEXP_MATCH([Product Concat],"(nesquik cereali).*(nesquik.*cereali)|(kellog's cereal)|(weetabix)") THEN
     "grocery_sweet groceries_cereals_breakfast cereals - ambient"
 
     // ENERGY SNACKS
@@ -440,7 +440,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"(mulino bianco).*pane|(panbauletto)|(pan b
     // BREADSTICKS/CRISPBREAD/CEREAL BASED CAKES - AMBIENT
 ELSEIF REGEXP_MATCH([Product Concat],"filoncini.*sesamo|trottoline|biscottata.*classica|barritas.*velarte|vecchio.*pistoccu|fette hotel|grissin.*fagolos|grissini.*morato|freselle|mini fette.*ciocc|gentilini.*(fette|integrali|biscotti|portafette)|mulino bianco,? (- )?fette (integrali|armonie)|wasa original|biscottate|(carrefour|esselunga|mulino bianco).*biscottate") THEN
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_breadsticks and crispbreads - ambient"
-ELSEIF REGEXP_MATCH([Product Concat],"((mulino bianco).*(michett.*|taralli|sgranocchi))|(fette biscottate)") AND [Ml Category 0]="grocery" THEN
+ELSEIF REGEXP_MATCH([Product Concat],"((mulino bianco).*(michett.*|sgranocchi|cracker|granetti))|(fette biscottate)|(grissini|pangri|taralli|gallette|croccantelle|crostin)|(wasa.*fette)") AND [Ml Category 0]="grocery" THEN
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_breadsticks and crispbreads - ambient"
 
     // BAGELS - FRESH
