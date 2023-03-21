@@ -6,8 +6,6 @@ IF REGEXP_MATCH([Product Concat],"gran rustico|^(casereccio.*conf. (12|4)00|pani
 
 //OTHER CATEGORY_0
 
-
-
     // BABY PRODUCTS
 ELSEIF REGEXP_MATCH([Product Concat],"bamboom")  THEN 
 	"baby products_uncategorized_uncategorized_uncategorized"
@@ -22,8 +20,6 @@ ELSEIF REGEXP_MATCH([Product Concat],"basta chiacchiere.*kindle")  THEN
 
     // BOOKS
 ELSEIF REGEXP_MATCH([Product Concat],"^pane, pizze e focacce$|^la treccia$|lingua.*(russa|spagnola)|cosmetici naturali fatti in casa|macroeconomia.*connect|pasticceria.*prodotti.*tecniche|mia pasticceria mignon|dolci siciliani.*ricette|pasticceria vegana|felt dogs|dammi mille baci|attacco dei giganti|tartarin de tarascon|pane e bugie|destini incrociati|grishaverse|ciao, mi chiamo luis|il pane fatto in casa|grande libro del pane|pepite d'oro.*italia|christiane f|eroi.*crisi|picciotti del profeta|dolci napoletani.*ricette|dolce e crudele|^citrus.*\d$|ricette della nonna|delitti della rue morgue|storie del quartiere|citta delle bestie|fiori del male|il profeta|pangea.*evoluzione|pane.*tempesta|^pensieri|eroe.*morto|chiacchiere.*gesu|basta chiacchiere|croissant.*parigi|scienza della pasticceria")  THEN 
-	"books_uncategorized_uncategorized_uncategorized"
-ELSEIF REGEXP_MATCH([Product Concat],"la schizofrenia") AND [Merchant Name]="amazon" THEN 
 	"books_uncategorized_uncategorized_uncategorized"
 
     // COMPUTERS & ELECTRONICS
@@ -53,7 +49,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"waitrose.*bouquet|piantina.*grassa|dueci")
     // HEALTH AND PERSONAL CARE
 ELSEIF REGEXP_MATCH([Product Concat],"bcaa.*powder|brioschi.*efferv|cuscino termico|panaceo|cbd|proctogel|cerotti|proteinbar|(scitec|powerbar).*protein")  THEN 
 	"health and personal care_uncategorized_uncategorized_uncategorized"
-ELSEIF REGEXP_MATCH([Product Concat],"crem.*corpo")  THEN 
+ELSEIF REGEXP_MATCH([Product Concat],"(crem.*corpo)|(crem.*pell|(saugella.*cream)|(crema.*cutan)|(crema.*derm))")  THEN 
     "beauty_skin care_body_moisturising care"
 
     // HOME AND KITCHEN
@@ -67,11 +63,11 @@ ELSEIF REGEXP_MATCH([Product Concat],"blister.*cornetto.*fiore")  THEN
     "home and kitchen_kitchen tools and gadgets_uncategorized_uncategorized"
 
     // HAIR
-ELSEIF REGEXP_MATCH([Product Concat],"(toppik.*cheratina)|(semi di lino)|(american crew.*cream)")  THEN 
+ELSEIF REGEXP_MATCH([Product Concat],"(toppik.*cheratina)|(semi di lino)|(american crew.*cream)|(crema.*ricci)")  THEN 
 	"beauty_hair care_shampoos, conditioners and styling products_other hair care"
 
     // CAR
-ELSEIF REGEXP_MATCH([Product Concat],"parasol.*auto|auto.*parasole")  THEN 
+ELSEIF REGEXP_MATCH([Product Concat],"(parasol.*auto)|(auto.*parasole)|(cora.*(\d{9}))")  THEN 
 	"automotive_car and motorbike accessories_sunshades_uncategorized"
 
     // JEWELLERY
@@ -189,6 +185,10 @@ ELSEIF REGEXP_MATCH([Product Concat],"malfy.*mignon") THEN
 ELSEIF REGEXP_MATCH([Product Concat],"cascine|frescobaldi|nuragus") THEN 
     "grocery_beer, wine and spirits_wine and champagne_white, red and pink wines"
 
+    //LIQUORS
+ELSEIF REGEXP_MATCH([Product Concat],"liquor.*(\d{3})") THEN 
+    "grocery_beer, wine and spirits_spirits_liqueurs"
+
     // JUICE BASED DRINKS
 ELSEIF REGEXP_MATCH([Product Concat],"dolce di natura|valfrutta")  THEN 
 	"grocery_coffee, tea and beverages_alcohol-free drinks_juice-based drinks"
@@ -216,6 +216,10 @@ ELSEIF REGEXP_MATCH([Product Concat],"sojasun.*bifidus|lc1.*multifrutti|fage.*be
     // FRUIT - FRESH
 ELSEIF REGEXP_MATCH([Product Concat],"fraise.*barquette|nectarina.*\d\d\d.*g|cuoredolce.*melone.*fette|^melone.*fette|(mix|cassetta).*mele|^mele.*(red|gold|coop)|fragole.*500 gr") THEN
     "grocery_fruit and vegetables_fruits_fruits - fresh"
+
+    // FRUIT DRIED
+ELSEIF REGEXP_MATCH([Product Concat],"(datteri medjoul)|(datteri medjool)") THEN
+    "grocery_sweet groceries_dried fruits_dried fruits - ambient"
 
     // VEGETABLES - OTHER - AMBIENT
 ELSEIF REGEXP_MATCH([Product Concat],"salvia.*semi|ficacci dolci giganti|melanzana.*rossa|caponata|(oliv.*schiacciate.*finocchietto)|(scalogni siciliani)") THEN
@@ -319,9 +323,11 @@ ELSEIF REGEXP_MATCH([Product Concat],"cesto.*natalizio.*lindt") THEN
     // SUGAR/SUGAR SUBSTITUTES/SYRUP/TREACLE - AMBIENT
 ELSEIF REGEXP_MATCH([Product Concat],"intenson.*erythrol") THEN
     "grocery_sweet groceries_desserts, sugar and flour_sugars, substitutes, syrups and molasses - ambient"
+ELSEIF REGEXP_MATCH([Product Concat],"(sciroppo.*caramello)|(monin.*syrup)") THEN
+    "grocery_sweet groceries_desserts, sugar and flour_dessert sauces - ambient"
 
     // FILLINGS/PASTES/SPREADS - SWEET - AMBIENT
-ELSEIF REGEXP_MATCH([Product Concat],"(servivita.*sciroppo)|((crema d'arachidi).*(\d{3}))") THEN
+ELSEIF REGEXP_MATCH([Product Concat],"(servivita.*sciroppo)|((crema d'arachidi).*(\d{3}))|(le conserve della nonna)") THEN
     "grocery_sweet groceries_jam, honey and sweet spread_spreads and fillings - ambient"
 
     // FLOUR - AMBIENT
@@ -400,6 +406,13 @@ ELSEIF REGEXP_MATCH([Product Concat],"(sachet xtreme).*(biscotto e crema)") THEN
 ELSEIF REGEXP_MATCH([Product Concat],"110702 anelli cipolla") THEN
     "grocery_prepared food_other - frozen_uncategorized"
 
+    // BREAKFAST CEREALS
+ELSEIF REGEXP_MATCH([Product Concat],"(nesquik cereali).*(nesquik.*cereali)") THEN
+    "grocery_sweet groceries_cereals_breakfast cereals - ambient"
+
+    // ENERGY SNACKS
+ELSEIF REGEXP_MATCH([Product Concat],"proaction") AND [Merchant Name]="amazon" THEN
+    "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_energy snacks"
 
 
 //SAME CATEGORY_0 AND BREADCRUMBS CONCERNED BY THE BR
@@ -588,14 +601,17 @@ ELSEIF REGEXP_MATCH([Product Concat],"ciabattin.*surgelat") THEN
 ELSEIF REGEXP_MATCH([Product Concat],"^(pane multicereale 200gr|bauletto danish)$") THEN
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_uncategorized"
 
-
-
-//FILTER ON MERCHAND NAME
-
-    //FILTER ON ????????
-    //
-//ELSEIF [Merchant Name]="???????" AND REGEXP_MATCH([Product Concat],"testtest") THEN 
-//	""
+    //BOOKS
+ELSEIF [Merchant Name]="amazon" AND REGEXP_MATCH([Product Concat],"(la schizofrenia)|(pasticceria di base. per gli ist. alberghieri)|
+(viaggio goloso nella pasticceria sana e buona)|(glossario di pasticceria)|(piccola pasticceria salata)|
+(il mondo dei semifreddi)|(wagashi. la pasticceria giapponese)|(baci stregati a new york)|(castelli friulani)|
+(frolla & sfoglia. teoria e pratica dell'impasto)|(gli inconsolabili)|(i baci sono definitivi)|(la mia pasticceria francese)|
+(orso pasticcio e balenottera)|(pasticceria senza glutine.*dolci prelibatezze)|(senza glutine e buono davvero)|
+(frolla art therapy)|(pasticceria smart)|(pasticceria. tecnica, arte e passione)|(schiacciare l'anima. gli abusi spirituali nella vita religiosa)|
+(torta in cielo)|(marie curie)|(teoria del)|vol.*(\d{1})|(binbogami)|(^la\s.*[A-Za-z].*del)|(^il\s.*[A-Za-z].*del)|(^lo\s.*[A-Za-z].*del)|
+(^i\s.*[A-Za-z].*del)|(^il\s.*[A-Za-z].*di)|(^lo\s.*[A-Za-z].*di)|(^la\s.*[A-Za-z].*di)|(^i\s.*[A-Za-z].*di)|(^gli\s.*[A-Za-z].*di)|
+(^le\s.*[A-Za-z].*di)|(^\w+$)|(^(\w+\s+\w+)$)|(^(\w+\s+\w+\s+\w+)$)|(^(\w+\s+\w+\s+\w+\s+\w+)$)") THEN 
+	"books_uncategorized_uncategorized_uncategorized"
 
 
 ELSE NULL
