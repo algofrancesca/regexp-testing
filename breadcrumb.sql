@@ -218,7 +218,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"fraise.*barquette|nectarina.*\d\d\d.*g|cuo
     "grocery_fruit and vegetables_fruits_fruits - fresh"
 
     // FRUIT DRIED
-ELSEIF REGEXP_MATCH([Product Concat],"(datteri medjoul)|(datteri medjool)|((prugne|albicocche|banana|fichi|bacche|zenzero|frutt).*(secch|essiccat|denocciolat|disidrat))") THEN
+ELSEIF REGEXP_MATCH([Product Concat],"(datteri medjoul)|(datteri medjool)|((prugne|albicocche|banana|fichi|bacche|zenzero|frutt|uva|uvetta).*(secch|essiccat|denocciolat|disidrat|sultan))|(noberasco bio)") THEN
     "grocery_sweet groceries_dried fruits_dried fruits - ambient"
 
     // VEGETABLES - OTHER - AMBIENT
@@ -253,7 +253,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"baguette con (gamberetti|prosciutto|bresao
 	"grocery_prepared food_sandwiches and wraps - fresh_uncategorized"
 
     // CEREAL/GRAIN - AMBIENT
-ELSEIF REGEXP_MATCH([Product Concat],"pedon.*cereali") THEN
+ELSEIF REGEXP_MATCH([Product Concat],"pedon.*cereali|kellog.*(ciocc|choc|special)") THEN
     "grocery_salty groceries_cereals_other cereals - ambient"
 
     // SNACKS - CHIPS/CRISPS - EXTRUDED
@@ -275,7 +275,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"dani.*cipolla|origano 20 g") THEN
     // CAKES/GATEAUX - AMBIENT
 ELSEIF REGEXP_MATCH([Product Concat],"gocciolotto|kinder.*colaz|motta.*girella|torta limone.*m.*b|pandoro.*motta|cereal.*cake|belli freschi.*torta.*natale|bauli.*viennese|merendina farcita.*bennet|brioss (ferrero|kinder)|cannoli piccoli|brownie.*cioccolato|^bombolon|panettone al pistacchio|pane\+cioccolato|panettone (cortilia|artigianale)|vergani.*(panettone|colomba)|(panettone|colomba).*vergani|6 muffin.*(cacao|cioccolato)|(mister|mr).*day.*muffin|muffin.*(cioccolato|si con riso|nutella|conad|gocce di ciocco)|pand(oro di verona|.*paluani)|milka.*brownie|esselunga.*muffin") THEN
     "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_cakes - ambient"
-ELSEIF REGEXP_MATCH([Product Concat],"colomba|pandoro|panettone|((mr. day).*muffin)|(camille.*ricche.*fibre)|(esselunga.*plumcake)|(tre marie il magnifico)|(tre marie capolavoro)") AND [Ml Category 0]="grocery" THEN
+ELSEIF REGEXP_MATCH([Product Concat],"colomba|pandoro|panettone|((mr. day).*muffin)|(camille.*ricche.*fibre)|(esselunga.*plumcake)|(tre marie il magnifico)|(tre marie capolavoro)|((mulino b).*(plumcake|crostatine|nastrine))") AND [Ml Category 0]="grocery" THEN
     "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_cakes - ambient"
 
     // CAKES/GATEAUX - FROZEN
@@ -291,13 +291,15 @@ ELSEIF REGEXP_MATCH([Product Concat],"(amaretti|(morbidi|classici|.*saronno))|(b
     // CHOCOLATE
 ELSEIF REGEXP_MATCH([Product Concat],"(cioccolato 6 x 45 g)|perugina|lindt|(cote d'or)|venchi") AND [Ml Category 0]="grocery" THEN
     "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_chocolate assortment"
+ELSEIF REGEXP_MATCH([Product Concat],"(kinde.*(cereali|bueno|maxi|(pan e cioc)|pingui|delice|brioss))|(nestle kitkat)|(ritter sport)|(novi (nocciolato|.*cioc))|(perugina.*tavolett)") AND [Ml Category 0]="grocery" THEN
+    "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_chocolate bar"
 
     // CEREALS/TOASTER PASTRIES - AMBIENT
 ELSEIF REGEXP_MATCH([Product Concat],"prozis oatmeal") THEN
     "grocery_sweet groceries_cereals_breakfast cereals - ambient"
 
     // DESSERTS - FRESH
-ELSEIF REGEXP_MATCH([Product Concat],"(brioche.*gelato.*caffe)|(past.*mandorl.*sicil.*)|(cannol.*sicil.*)|(natillas de vainilla)")  THEN 
+ELSEIF REGEXP_MATCH([Product Concat],"(brioche.*gelato.*caffe)|(past.*mandorl.*sicil.*)|(cannol.*sicil.*)|(natillas de vainilla)|(cameo muu)|(danette)|(fruttolo)")  THEN 
 	"grocery_sweet groceries_desserts, sugar and flour_desserts - fresh"
 
     // PREPARED COATINGS/ICINGS/FROSTINGS - AMBIENT
@@ -305,7 +307,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"paste di mandorla.*box|frutti.*pasta reale
     "grocery_sweet groceries_desserts, sugar and flour_prepared glazes - ambient"
 
     // RAISING AGENTS - AMBIENT
-ELSEIF REGEXP_MATCH([Product Concat],"lievito per pane|^lievito.*birra") THEN
+ELSEIF REGEXP_MATCH([Product Concat],"lievito per pane|^lievito.*birra|(lievito fresco)|(agente lievitante)|(lievito per dolci)") THEN
     "grocery_sweet groceries_desserts, sugar and flour_yeast - ambient"
 
     // GROCERY
@@ -319,13 +321,13 @@ ELSEIF REGEXP_MATCH([Product Concat],"((sciroppo|topping).*caramello)|(monin.*sy
     "grocery_sweet groceries_desserts, sugar and flour_dessert sauces - ambient"
 
     // FILLINGS/PASTES/SPREADS - SWEET - AMBIENT
-ELSEIF REGEXP_MATCH([Product Concat],"(servivita.*sciroppo)|((crema d'arachidi).*(\d{3}))|(le conserve della nonna)|(crema spalmabile)|(nutella ferrero)|hero|zuegg|menz&gasser|(santa rosa)") THEN
+ELSEIF REGEXP_MATCH([Product Concat],"(servivita.*sciroppo)|((crema d'arachidi).*(\d{3}))|(le conserve della nonna)|(crema spalmabile)|(nutella ferrero)|hero|zuegg|menz&gasser|(santa rosa)|(marmellata.*frutta)|(conserv.*frutta)|(composta.*frutta)|(nutella \d{3})") THEN
     "grocery_sweet groceries_jam, honey and sweet spread_spreads and fillings - ambient"
 ELSEIF REGEXP_MATCH([Product Concat],"pasta di zucchero") THEN
     "grocery_sweet groceries_desserts, sugar and flour_prepared glazes - ambient"
 
     // FLOUR - AMBIENT
-ELSEIF REGEXP_MATCH([Product Concat],"(farina di mandorle.*kg)|(kg.*farina di mandorle)|^farina.*grano tenero|(cibocrudo|oatmeal).*farina") THEN
+ELSEIF REGEXP_MATCH([Product Concat],"(farina di mandorle.*kg)|(kg.*farina di mandorle)|farin.*((grano tenero)|(per pizza)|(grano duro)|(integrale))|(cibocrudo|oatmeal).*farina") THEN
     "grocery_sweet groceries_desserts, sugar and flour_flours"
 
     // SNACKS - MEAT PRODUCTS
@@ -345,7 +347,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"ac.nat.alp.guizz") THEN
     "grocery_coffee, tea and beverages_water_non flavoured non carbonated"
 
     // CHOCOLATE - MINIS
-ELSEIF REGEXP_MATCH([Product Concat],"cornet.*lind(or|t)|lind(t|or).*cornet") THEN
+ELSEIF REGEXP_MATCH([Product Concat],"(cornet.*lind(or|t))|(lind(t|or).*cornet)|(m&m)|(ferrero rocher)|(kinder sorpresa)") THEN
     "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_chocolate - mini"
 
     // DESSERT SAUCES - AMBIENT
@@ -407,7 +409,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"(nesquik cereali)|(nesquik.*cereali)|(kell
     // ENERGY SNACKS
 ELSEIF REGEXP_MATCH([Product Concat],"proaction") AND [Merchant Name]="amazon" THEN
     "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_energy snacks"
-ELSEIF REGEXP_MATCH([Product Concat],"(kellog|fitness|(mulino bianco)|misura).*barrett") AND [Ml Category 0]="grocery" THEN
+ELSEIF REGEXP_MATCH([Product Concat],"((kellog|fitness|(mulino bianco)|misura).*barrett)|(barrett.*cereal)") AND [Ml Category 0]="grocery" THEN
     "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_cereal - fruit bars"
 
     // FLOUR
@@ -419,11 +421,13 @@ ELSEIF REGEXP_MATCH([Product Concat],"sperlari|condorelli|(pernigotti.*torron)|c
     "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_candies - specialties"
 ELSEIF REGEXP_MATCH([Product Concat],"(chupa chups)|golia|ambrosoli|ricola|(tic tac)|(pastiglia leone)|(liquirizia amarelli)") AND [Ml Category 0]="grocery" THEN
     "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_candies - hard"
-ELSEIF REGEXP_MATCH([Product Concat],"haribo|dufur|goleador|fruittella|(caramelle morbide)|(caramelle gommose)|gran.*gelees.*duetto") AND [Ml Category 0]="grocery" THEN
+ELSEIF REGEXP_MATCH([Product Concat],"haribo|dufur|dufour|goleador|fruittella|(caramelle morbide)|(caramelle gommose)|gran.*gelees.*duetto") THEN
     "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_candies - soft"
+ELSEIF REGEXP_MATCH([Product Concat],"vivident|daygum|vigorsol|(big babol)") AND [Ml Category 0]="grocery" THEN
+    "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_chewing gums"
 
     //CHOCOLATE EGGS
-ELSEIF REGEXP_MATCH([Product Concat],"(uovo.*pasqua)|(uovo.*cioccolato)") AND [Ml Category 0]="grocery" THEN
+ELSEIF REGEXP_MATCH([Product Concat],"(uovo.*pasqua)|(uovo.*cioccolato)|(kinder gransorpresa)") AND [Ml Category 0]="grocery" THEN
     "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_chocolate eggs"
 
     //DRIED fruits
@@ -436,7 +440,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"(mandorle|nocciole|pistacch)|(sgusciat|tos
     // BREADS - OTHER - AMBIENT
 ELSEIF REGEXP_MATCH([Product Concat],"pane all'acqua.*conf|ampagnolo.*pezzo|filone.*napoletano.*450|pane casereccio ceralli|pane grano (tenero|duro($| bio))|(pane|ane fresco) .*senza sale|pane.*fresco.*lievitazione|pagnotta.*varesina|panifici costantini.*pane.*sale|pane.*(lariano|kamut)|zanella.*miche|filoncino|siciliano affettat|pan famiglia grano duro|gr.duro pagnotta|filone (tirolese|di grano duro)") THEN
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_other - ambient"
-ELSEIF REGEXP_MATCH([Product Concat],"(mulino bianco).*tigell.*") AND [Ml Category 0]="grocery" THEN
+ELSEIF REGEXP_MATCH([Product Concat],"(mulino b).*tigell.*") AND [Ml Category 0]="grocery" THEN
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_other - ambient"
 
     // BREAD - OTHER - FRESH
@@ -450,13 +454,13 @@ ELSEIF REGEXP_MATCH([Product Concat],"(panini|pane).*(surgelat.*)") THEN
     // SLICING/TIN STYLE LOAF - AMBIENT
 ELSEIF REGEXP_MATCH([Product Concat],"panem.*pane.*fette|pane.*affettato|carrefour classic pane.*8 cereali|filone.*panem|pan.*briosce|weider.*pane.*fette|pane affettato|pane.*daily bread|pane( | a )fette|affettato.*foggiano|sandwich.*gardapan|pane.*segale.*landbrot|pane.*5cereali|pane.*fette.*gr.*duro|pagnotta.*grano duro.*conad|proteico.*rustico.*250|pagnotta.*(grano duro|integrale).*(m.*b|350 ?g)|pane.*farro.*300 g|saraceno.*fette|segale pane rustico|dailybread.*segale|pane.*cereali.*semi.*(lino|girasole)|pangrande.*novita|interpan.*benessere|(selex.*pane|pagnotta).*fette|roberto.*(tramezzino|pane bianco)|matt pansemi|pane.*tramezzino|nutri free.*(sandwich|panfette)|pane bauletto.*line@|cereal .*pane integrale|carrefour.*pane.*fette|pane rustico mb|(morato|pane).*american.*sandwich|pane.*fette.*(coop|mulino bianco)|^pan (carre|bauletto)|cereal.*pane.*fette|pane?bauletto|panpiuma|pan.*cer.*soia|pancarre|pane grano duro.*m.*b|pane (integrale|bianco) (mul.*bianco|bennet)|mulino bianco pane bianco|pan piuma|pane morbido integrale|pan carre.*(san carlo|fette|mul.*bianco|mb)|mulino bianco.*(pane al grano duro|gran ?bauletto|panino|pan (bauletto|carre))|(pane di grano duro|(gran|pan) ?baulet).*m.*bianco|cuor di pane") THEN
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_sliced bread - ambient"
-ELSEIF REGEXP_MATCH([Product Concat],"(mulino bianco).*pane|(panbauletto)|(pan bauletto)|(pan.*tramezz)|(Harry Dinkel Sandwich)|(rustichello.*panificio)") AND [Ml Category 0]="grocery" THEN
+ELSEIF REGEXP_MATCH([Product Concat],"(mulino b).*pane|(panbauletto)|(pan bauletto)|(pan.*tramezz)|(Harry Dinkel Sandwich)|(rustichello.*panificio)") AND [Ml Category 0]="grocery" THEN
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_sliced bread - ambient" 
 
     // BREADSTICKS/CRISPBREAD/CEREAL BASED CAKES - AMBIENT
 ELSEIF REGEXP_MATCH([Product Concat],"filoncini.*sesamo|trottoline|biscottata.*classica|barritas.*velarte|vecchio.*pistoccu|fette hotel|grissin.*fagolos|grissini.*morato|freselle|mini fette.*ciocc|gentilini.*(fette|integrali|biscotti|portafette)|mulino bianco,? (- )?fette (integrali|armonie)|wasa original|biscottate|(carrefour|esselunga|mulino bianco).*biscottate") THEN
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_breadsticks and crispbreads - ambient"
-ELSEIF REGEXP_MATCH([Product Concat],"((mulino bianco).*(michett.*|sgranocchi|cracker|granetti))|(fette biscottate)|(grissini|pangri|taralli|gallette|croccantelle|crostin)|(wasa.*(fette|pane))") AND [Ml Category 0]="grocery" THEN
+ELSEIF REGEXP_MATCH([Product Concat],"((mulino b).*(michett.*|sgranocchi|cracker|granetti))|(fette biscottate)|(grissini|pangri|taralli|gallette|croccantelle|crostin)|(wasa.*(fette|pane))|schiacciatine") AND [Ml Category 0]="grocery" THEN
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_breadsticks and crispbreads - ambient"
 
     // BAGELS - FRESH
@@ -582,7 +586,7 @@ ELSEIF REGEXP_MATCH([Product Concat],"panzerott.*surgelat") AND [Ml Category 0]=
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_pizza bread - frozen"
 
     // BREADS SPECIALITIES - AMBIENT
-ELSEIF REGEXP_MATCH([Product Concat],"pan integral|pane.*integrale.*segale|bocconcino.*olive|pane alle olive|pane.*(semi.*grandeimpero|protobread|barretta.*cereali|tipo.*sicilian)|^pane 4 cereali($| bio)|^pane ai semi|bauletto.*ceralli|pane.*(olive.*mandorle|grano duro.*sesamo)|^pane.*cassetta.*(olio|multi)|pane.*campagna.*misti|pane ai 5 cereali 400 g|^pane.*grano saraceno|p?ane fresco.*(pugliese|siciliano)|p?ane.*\'siciliano\'.*iper|schar cereale|pane (carasau|con segale)|pan brioche classico|pane.*(millesemi|casereccio)|pan di segale.*500|dailybread.*segale|pane.*segale.*senza lievito|cereal.*pan.*segale|pan segale bio|[3-4] piadine 3(0|9)0 g|real piada|piada sfog.*(650|390)|^pane( di | )segale|pane azzimo|mulino bianco.*pane.*cioccolato") THEN
+ELSEIF REGEXP_MATCH([Product Concat],"pan integral|pane.*integrale.*segale|bocconcino.*olive|pane alle olive|pane.*(semi.*grandeimpero|protobread|barretta.*cereali|tipo.*sicilian)|^pane 4 cereali($| bio)|^pane ai semi|bauletto.*ceralli|pane.*(olive.*mandorle|grano duro.*sesamo)|^pane.*cassetta.*(olio|multi)|pane.*campagna.*misti|pane ai 5 cereali 400 g|^pane.*grano saraceno|p?ane fresco.*(pugliese|siciliano)|p?ane.*\'siciliano\'.*iper|schar cereale|pane (carasau|con segale)|pan brioche classico|pane.*(millesemi|casereccio)|pan di segale.*500|dailybread.*segale|pane.*segale.*senza lievito|cereal.*pan.*segale|pan segale bio|[3-4] piadine 3(0|9)0 g|real piada|piada sfog.*(650|390)|^pane( di | )segale|pane azzimo|mulino bianco.*pane.*cioccolato|piadina") THEN
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_special breads - ambient"
 ELSEIF REGEXP_MATCH([Product Concat],"pan.*(senza glutine)") AND [Ml Category 0]="grocery" THEN
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_special breads - ambient"
@@ -617,8 +621,8 @@ ELSEIF REGEXP_MATCH([Product Concat],"ciabattin.*surgelat") THEN
 ELSEIF REGEXP_MATCH([Product Concat],"^(pane multicereale 200gr|bauletto danish)$") THEN
     "grocery_sweet groceries_bread, rusk, pancake and bakery products_uncategorized"
 
-    //BISCUITS
-ELSEIF REGEXP_MATCH([Product Concat],"(oreo|(tre marie)|saiwa|(mulino bianco)|pavesi|lotus|doria|vincenzi|biscotti)") AND [Ml Category 0]="grocery" THEN
+    //BISCUITS 
+ELSEIF REGEXP_MATCH([Product Concat],"oreo|(tre marie)|saiwa|(mulino bianco)|pavesi|lotus|doria|vincenzi|biscotti|balocco|loacker|frollini|mcvitie|krumiri") AND [Ml Category 0]="grocery" THEN
     "grocery_sweet groceries_biscuits, cakes, chocolates and sweets_biscuits"
 
     //BOOKS
