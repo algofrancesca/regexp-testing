@@ -40,15 +40,23 @@ Hours to date: 15h
     ELSEIF REGEXP_MATCH([product_concat], "monopattino") THEN "sports and outdoors_skates, skateboards and scooters_scooters and equipment_uncategorized"
     //FRIDGES
     ELSEIF REGEXP_MATCH([product_concat], "(quattro porte).*akg") THEN "large appliances_refrigerators, freezers and ice cube makers_refrigerators_uncategorized"
-     
+    //RADIO
+    ELSEIF REGEXP_MATCH([product_concat], "fettoca.*rcd") THEN "high-tech_audio et video portable_radio portables_uncategorized"
+    //CAR SCREEN
+    ELSEIF REGEXP_MATCH([product_concat], "(carplay.*screen|(per bmw.*screen))") THEN "computer and electronics_car and vehicle electronics_uncategorized_uncategorized"
+    //BIKE TRAINER
+    ELSEIF REGEXP_MATCH([product_concat], "thinkrider x5") THEN "sports and outdoors_fitness_exercise machines_uncategorized" 
+    //AIR CONDITIONER
+    ELSEIF REGEXP_MATCH([product_concat], "samsung kit f-ar") THEN "diy and tools_heating and cooling_air conditioners_uncategorized"
+
 
 //SAME CATEGORY_0 BUT DIFFERENT BREADCRUMBS
     //3D PRINTER ACCESSORIES
     ELSEIF REGEXP_MATCH([product_concat], "(filamento.*stamp.*3d)|(part.*stampant.*3d)|(3d print.*(tool|sensor|switch|accessor|filament|motherboard))|(tool|sensor|switch|accessor|filament|motherboard|nozzle|(build surface)|filament|needle).*(E3D|micro-swiss|primacreator|buildtak|PEI sheet|geckotek|hatchbox|eSUN|colorfabb|(3d print))") THEN "computer and electronics_accessories_3d printer accessories_uncategorized"
     //INSURANCE 
-    ELSEIF REGEXP_MATCH([product_concat], "(ann.*di assistenza)|(serv. protection)") THEN "computer and electronics_guarantees_uncategorized_uncategorized"
+    ELSEIF REGEXP_MATCH([product_concat], "(s. telefonia)|(p. telefonia)|(ann.*di assistenza)|(serv. protection)") THEN "computer and electronics_guarantees_uncategorized_uncategorized"
     //LAPTOPS
-    ELSEIF REGEXP_MATCH([product_concat], "(asus rog)|(computer potatile nuovo)|dell xps|hp spectre|lenovo thinkpad|asus zenbook|acer swift|macbook pro|msi ge75 raider|lg gram|razer blade|microsoft surface laptop|samsung galaxy book|gigabyte aero|toshiba portege|huawei matebook|fujitsu lifebook|sony vaio|panasonic toughbook|alienware m15|clevo p751tm-g|zotac zbox mi660") THEN "computer and electronics_laptops_uncategorized_uncategorized"
+    ELSEIF REGEXP_MATCH([product_concat], "((hp.*laptop)|(computer|laptop).*portatile)|(asus.*s\d{3}[a-z]{2}-[a-z]{2}\d{3}[a-z])|(asus rog)|dell xps|hp spectre|lenovo thinkpad|asus zenbook|acer swift|macbook pro|msi ge75 raider|lg gram|razer blade|microsoft surface laptop|samsung galaxy book|gigabyte aero|toshiba portege|huawei matebook|fujitsu lifebook|sony vaio|panasonic toughbook|alienware m15|clevo p751tm-g|zotac zbox mi660") THEN "computer and electronics_laptops_uncategorized_uncategorized"
     //VIDEO ACCESSORIES
     ELSEIF REGEXP_MATCH([product_concat], "glass.*screen.*nintendo") THEN "computer and electronics_laptops_uncategorized_uncategorized"
     //POWER INVERTERS
@@ -66,7 +74,7 @@ Hours to date: 15h
     // KEYBOARD
     ELSEIF REGEXP_MATCH([product_concat],  "razer power up") THEN "computer and electronics_accessories_keyboard and mice accessories_uncategorized"
     // TVs
-    ELSEIF REGEXP_MATCH([product_concat],  "qled.*(4k|8k)") THEN "computer and electronics_home cinema, tv and video_tvs_uncategorized"
+    ELSEIF REGEXP_MATCH([product_concat],  "qled.*(4k|8k)|samsung.*qe\d{2}[a-z]\d{2}[a-z]{2}|lg.*nanocell") THEN "computer and electronics_home cinema, tv and video_tvs_uncategorized"
 
 
 
@@ -78,7 +86,7 @@ Hours to date: 15h
     //EBOOK READERS
     ELSEIF REGEXP_MATCH([product_concat], "((kobo|kindle|nook|Onyx Boox|pocketbook|likebook|tolino|inkbook|icarus).*reader)|(reader.*(kobo|kindle|nook|Onyx Boox|pocketbook|likebook|tolino|inkbook|icarus))") THEN "computer and electronics_tablets_ebook readers_uncategorized"
     //TABLETS
-    ELSEIF REGEXP_MATCH([product_concat], "(lenovo m10)|(chuwi.*tablet)|(tablet.*chuwi)|((lenovo|samsung|).*tab)|huawei.*(matepad|tablet)|(10.*pollici.*tab)|(apple ipad)|(ipad apple)|(xiaomi note)") THEN "computer and electronics_tablets_tablets_uncategorized"
+    ELSEIF REGEXP_MATCH([product_concat], "(apple.*ipad.*gb)|(lenovo m10)|(chuwi.*tablet)|(tablet.*chuwi)|((lenovo|samsung|).*tab)|huawei.*(matepad|tablet)|(10.*pollici.*tab)|(apple ipad)|(ipad apple)|(xiaomi note)") THEN "computer and electronics_tablets_tablets_uncategorized"
     //GRAPHIC TABLETS
     ELSEIF REGEXP_MATCH([product_concat], "(gaomon|homestec|huion).*(tavoletta grafica)") THEN "computer and electronics_tablets_graphic tablets_uncategorized"
     //EWRITERS
@@ -87,14 +95,14 @@ Hours to date: 15h
     ELSEIF REGEXP_MATCH([product_concat], "(Touchscreen\s+digitizer|LCD\s+screen\s+display|battery|charging\s+port|power\s+button|Volume\s+button|Home\s+button|Audio\s+jack|Front\s+camera|Rear\s+camera|Motherboard|Speakers|Wi-Fi\s+antenna|Cellular\s+antenna|SIM\s+card\s+tray).*(Samsung|Apple|Lenovo|Microsoft|Huawei|ASUS|Acer|AmazonBasics|RCA|(Dragon Touch)|Onn|Vankyo|meberry|chuwi|zte)") THEN "computer and electronics_tablets_tablet components and replacement parts_uncategorized"
     ELSEIF REGEXP_MATCH([product_concat], "(samsung|apple|lenovo|microsoft|huawei|asus|acer|amazonbasics|rca|(dragon touch)|onn|vankyo|meberry|chuwi|zte).*(touchscreen\s+digitizer|lcd\s+screen\s+display|battery|charging\s+port|power\s+button|volume\s+button|home\s+button|audio\s+jack|front\s+camera|rear\s+camera|motherboard|speakers|wi-fi\s+antenna|cellular\s+antenna|sim\s+card\s+tray)") THEN "computer and electronics_tablets_tablet components and replacement parts_uncategorized"
     //LANDLINE PHONE ACCESSORIES
-    ELSEIF REGEXP_MATCH([product_concat], "(((handset cord)|(phone cord)|(phone stand)|(wall mount)|(caller ID display)|(answering machine)|(amplified handset)|(amplified phone)|(cordless phone battery)|(line splitter)|(phone jack)|(extension cord)|(phone cord detangler)|(dial pad)|(cavo telefonico)|(supporto per telefono)|(supporto a parete)|(display.*identificatore.*chiamata)|(segreteria telefonica)|(cornetta amplificata)|(telefono amplificato)|(batteria.*telefono cordless)|(splitter telefonico)|(presa telefonica)|svuotacordoli).*(Panasonic|AT&T|VTech|Gigaset|Motorola|Philips|Uniden|Cisco|Yealink|Grandstream))") THEN "computer and electronics_accessories_phone accessories_uncategorized"
+    ELSEIF REGEXP_MATCH([product_concat], "((telefono.*(a filo))|(telefono.*cordless)|(telefono.*fisso)|(handset cord)|(phone cord)|(phone stand)|(wall mount)|(caller ID display)|(answering machine)|(amplified handset)|(amplified phone)|(cordless phone battery)|(line splitter)|(phone jack)|(extension cord)|(phone cord detangler)|(dial pad)|(cavo telefonico)|(supporto per telefono)|(supporto a parete)|(display.*identificatore.*chiamata)|(segreteria telefonica)|(cornetta amplificata)|(telefono amplificato)|(batteria.*telefono cordless)|(splitter telefonico)|(presa telefonica)|svuotacordoli))") THEN "computer and electronics_accessories_phone accessories_uncategorized"
     ELSEIF REGEXP_MATCH([product_concat], "((panasonic|at&t|vtech|gigaset|motorola|philips|uniden|cisco|yealink|grandstream).*((handset cord)|(phone cord)|(phone stand)|(wall mount)|(caller ID display)|(answering machine)|(amplified handset)|(amplified phone)|(cordless phone battery)|(line splitter)|(phone jack)|(extension cord)|(phone cord detangler)|(dial pad)|(cavo telefonico)|(supporto per telefono)|(supporto a parete)|(display.*identificatore.*chiamata)|(segreteria telefonica)|(cornetta amplificata)|(telefono amplificato)|(batteria.*telefono cordless)|(splitter telefonico)|(presa telefonica)|svuotacordoli))") THEN "computer and electronics_accessories_phone accessories_uncategorized"
     //MOBILE PHONES AND SMARTPHONES
-    ELSEIF REGEXP_MATCH([product_concat], "((galaxy s21)|(honor 50)|(lg wing)|(motorola.*(5g|e7|razr|edge|(one action)))|(cellulare.*nuovo)|(android flip phone)|(cellulare.*anziani)|(cat.*pro.*android)|(asus.*rog.*phone)|(oneplus.*n.*(\d{3}))|(cellulare smart senior)|(xiaomi.*11)|(iphone.*gb)|(11t pro grey)|(gb.*mah.*mp)|(oppo find)|(smartphone.*(dual sim))|(nothing phone)|(pixel 6a)|(black shark 4)|(realme 7 pro)|(oneplus.*2t)|(huawei p4)|(oppo reno6)|(poco.*(m4|x3))|(xiaomi mi)|(xiaomi lite)|(oneplus 8t)|(huawei p30)|(vendo smartphone nuovo)|(redmi note)|(mi|huawei|oneplus|apple|samsung|google|oneplus|xiaomi|oppo|realme|vivo|motorola|nokia|redmi|poco|oukitel|honor|trevi|blackview|blackberry).*(smartphone|samartphone|cellulare|portatile|mobile|iphone|galaxy|pixel|moto|poco|redmi|powernarzo|(dual sim)|remedi)|(smartphone|cellulare|portatile|mobile|iphone|galaxy|pixel|moto|poco|redmi|powernarzo|oukitel).*((gb.*mah)|mi|huawai|oneplus|apple|samsung|google|oneplus|xiaomi|oppo|realme|vivo|motorola|nokia|poco|honor|trevi|blackview|remedi))") THEN "computer and electronics_mobile phones and smartphones_uncategorized_uncategorized"
+    ELSEIF REGEXP_MATCH([product_concat], "((iphone.*(\d{2}))|((i14 pro).*smartphone)|(jmc.*android)|(oukitel.*wp)|((telefono cellulare).*(full set))|(galaxy s21)|(honor 50)|(lg wing)|(motorola.*(5g|e7|razr|edge|(one action)))|(cellulare.*nuovo)|(android flip phone)|(cellulare.*anziani)|(cat.*pro.*android)|(asus.*rog.*phone)|(oneplus.*n.*(\d{3}))|(cellulare smart senior)|(xiaomi.*11)|(iphone.*gb)|(11t pro grey)|(gb.*mah.*mp)|(oppo find)|(smartphone.*(dual sim))|(nothing phone)|(pixel 6a)|(black shark 4)|(realme 7 pro)|(oneplus.*2t)|(huawei p4)|(oppo reno6)|(poco.*(m4|x3))|(xiaomi mi)|(xiaomi lite)|(oneplus 8t)|(huawei p30)|(vendo smartphone nuovo)|(redmi note)|(mi|huawei|oneplus|apple|samsung|google|oneplus|xiaomi|oppo|realme|vivo|motorola|nokia|redmi|poco|oukitel|honor|trevi|blackview|blackberry|remedi|oukitel).*(smartphone|samartphone|cellulare|portatile|mobile|iphone|galaxy|pixel|moto|poco|redmi|powernarzo|(dual sim)|remedi)|(smartphone|cellulare|portatile|mobile|iphone|galaxy|pixel|moto|poco|redmi|powernarzo|oukitel).*((gb.*mah)|mi|huawai|oneplus|apple|samsung|google|oneplus|xiaomi|oppo|realme|vivo|motorola|nokia|poco|honor|trevi|blackview|remedi|oukitel))") THEN "computer and electronics_mobile phones and smartphones_uncategorized_uncategorized"
     //MOBILE PHONE ACCESSORIES
     ELSEIF REGEXP_MATCH([product_concat], "(porta.*cellulare)|(supporto.*cellulare)|(phone.*(case|cover)|((signal booster).*mobile)|(amplificatore.*segnale.*mobile)|(screen protector)|(power bank)|(bluetooth speaker)|(selfie stick)|(phone holder)|(phone grips)|(wireless charger)|(SIM card adapter)|(ejector pin)|(phone stand)|((custodia|(pellicol.*protettiv)|adattator).*(cellulare|(sched.*sim))))") THEN "computer and electronics_accessories_mobile phone accessories_uncategorized"
     //TABLET AND LAPTOP ACCESSORIES
-    ELSEIF REGEXP_MATCH([product_concat], "(tablet battery)|((batteria|penna).*(tablet|(tavoletta grafica)|ipad))") THEN "computer and electronics_accessories_tablet and laptop accessories_uncategorized"
+    ELSEIF REGEXP_MATCH([product_concat], "(smart.*keyboard.*ipad)|(apple.*pencil)|(tablet battery)|((batteria|penna).*(tablet|(tavoletta grafica)|ipad))") THEN "computer and electronics_accessories_tablet and laptop accessories_uncategorized"
     
 //FILTER ON MERCHANT NAME
     ELSEIF [merchant_name]="apple" AND REGEXP_MATCH([product_concat],  "apple developer program") THEN "loyalty program_uncategorized_uncategorized_uncategorized"
